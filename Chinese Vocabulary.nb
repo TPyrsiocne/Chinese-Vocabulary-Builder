@@ -10,17 +10,214 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       776,         34]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       916,         37]
-CellTagsIndexPosition[       873,         34]
+NotebookDataLength[      8309,        232]
+NotebookOptionsPosition[      8002,        218]
+NotebookOutlinePosition[      8355,        234]
+CellTagsIndexPosition[      8312,        231]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "filePathToChars", "=", "\"\</Users/tysonprice/Desktop/list.txt\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "filePathToWords", "=", "\"\</Users/tysonprice/Desktop/words.txt\>\""}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"charsSTRING", "=", 
+   RowBox[{"Import", "[", "filePathToChars", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"wordsSTRING", "=", 
+    RowBox[{"Import", "[", "filePathToWords", "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "CharacterData", " ", "format", " ", "is", " ", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"Rank", ",", " ", "Char", ",", " ", "freq", ",", " ", 
+      RowBox[{"integreaed", " ", "fraction"}], ",", " ", 
+      RowBox[{"str", " ", "pronuncation"}], ",", " ", 
+      RowBox[{"str", " ", "deffinition"}]}], "}"}], "\[IndentingNewLine]", 
+    RowBox[{"ex", ":", 
+     RowBox[{"{", 
+      RowBox[{
+      "100", ",", "\"\<\:5b9e\>\"", ",", "368494", ",", "41.7703310946`", 
+       ",", "\"\<shi2\>\"", ",", "\"\<real/true/honest/really/solid\>\""}], 
+      "}"}]}]}], "\[IndentingNewLine]", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characterData", "=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"#", ",", "\"\<\\t\>\""}], "]"}], "&"}], "/@", 
+     RowBox[{
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"charsSTRING", ",", "\"\<\\n\>\""}], "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"16", ";;", 
+        RowBox[{"-", "2"}]}], "]"}], "]"}]}], ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"4", ">", 
+     RowBox[{"Min", "[", 
+      RowBox[{
+       RowBox[{"#1", "&"}], "@@@", 
+       RowBox[{"Tally", "[", 
+        RowBox[{"Length", "/@", "characterData"}], "]"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"Beep", "[", "]"}], ";", 
+     RowBox[{
+     "Print", "[", "\"\<(!) missing parts of char list entries\>\"", 
+      "]"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"characterData", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Which", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "@", "#"}], "\[Equal]", "6"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "3", "]"}], "]"}]}], ",", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "4", "]"}], "]"}]}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "6", "]"}], "]"}]}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"Length", "@", "#"}], "\[Equal]", "5"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "3", "]"}], "]"}]}], ",", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "4", "]"}], "]"}]}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], ",", "\"\<\>\""}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"Length", "@", "#"}], "\[Equal]", "4"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "3", "]"}], "]"}]}], ",", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "4", "]"}], "]"}]}], ",", "\"\<\>\"", ",", 
+         "\"\<\>\""}], "}"}]}], "]"}], "&"}], "/@", "characterData"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "charsSTRING", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"wrodData", " ", "format", " ", "is", "\[IndentingNewLine]", 
+    RowBox[{"{", " ", 
+     RowBox[{"Rank", ",", " ", "Word", ",", " ", 
+      RowBox[{"num", " ", "freq"}]}], "}"}], "\[IndentingNewLine]", "Word", 
+    " ", "may", " ", "have", " ", "any", " ", "number", " ", "of", " ", 
+    "characters"}], "\[IndentingNewLine]", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wordsData", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringSplit", "[", 
+      RowBox[{"#", ",", "\"\< \>\""}], "]"}], "&"}], "/@", 
+    RowBox[{
+     RowBox[{"StringSplit", "[", 
+      RowBox[{"wordsSTRING", ",", "\"\<\\n\>\""}], "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"5", ";;", 
+       RowBox[{"-", "1"}]}], "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"2", ">", 
+     RowBox[{"Min", "[", 
+      RowBox[{
+       RowBox[{"#1", "&"}], "@@@", 
+       RowBox[{"Tally", "[", 
+        RowBox[{"Length", "/@", "wordsData"}], "]"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"Beep", "[", "]"}], ";", 
+     RowBox[{
+     "Print", "[", "\"\<(!) missing parts of word list entries\>\"", 
+      "]"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wordsData", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Which", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "@", "#"}], "\[Equal]", "3"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], ",", 
+         RowBox[{"ToExpression", "[", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"Length", "@", "#"}], "\[Equal]", "2"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ",", "\"\<\>\"", ",", 
+         RowBox[{"ToExpression", "[", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], "&"}], "/@",
+     "wordsData"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "wordsSTRING", "]"}], "\[IndentingNewLine]"}], "Input",\
+
+ CellChangeTimes->{{3.8096259735026617`*^9, 3.809626015886894*^9}, {
+  3.809626084642559*^9, 3.809626148142933*^9}, {3.8096261877517567`*^9, 
+  3.809626236147771*^9}, {3.809649919655249*^9, 3.80964994352197*^9}, {
+  3.809650144679441*^9, 3.809650181173605*^9}, {3.8096502233537817`*^9, 
+  3.809650226022015*^9}, {3.809650262077018*^9, 3.809650559491078*^9}, {
+  3.8096505955588303`*^9, 3.809650732206291*^9}, {3.809650773196875*^9, 
+  3.8096511942337437`*^9}, {3.809651227838284*^9, 3.809651354100313*^9}, {
+  3.8096515210116453`*^9, 3.809651570820776*^9}, {3.809651620656513*^9, 
+  3.809651648198645*^9}, {3.809651854182643*^9, 3.8096520712411213`*^9}},
+ CellLabel->
+  "In[218]:=",ExpressionUUID->"666de3e5-aa7d-4dd2-a451-6032d3b93e63"]
 },
-WindowSize->{808, 844},
-WindowMargins->{{204, Automatic}, {Automatic, 24}},
+WindowSize->{1433, 815},
+WindowMargins->{{Automatic, 1}, {Automatic, 0}},
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
 2018)",
 StyleDefinitions->"Default.nb"
@@ -36,9 +233,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 7440, 196, 579, "Input",ExpressionUUID->"666de3e5-aa7d-4dd2-a451-6032d3b93e63"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

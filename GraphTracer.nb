@@ -1,0 +1,208 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6672,        200]
+NotebookOptionsPosition[      6363,        186]
+NotebookOutlinePosition[      6718,        202]
+CellTagsIndexPosition[      6675,        199]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Needs", " ", "Chinese", " ", 
+     RowBox[{"Vocabulary", ".", "nb"}]}], ",", " ", 
+    RowBox[{"Functions", ".", "nb"}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"===", "===", "==="}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"define", " ", "ranking", " ", "rules"}], "===", "===", "==="}],
+      "="}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"rank", " ", "\[Rule]", " ", "char"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"rankTOchar", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Rule", "[", 
+        RowBox[{"#2", ",", "#1"}], "]"}], "&"}], "@@@", "charactersData"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"char", " ", "\[Rule]", " ", "rank"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"charTOrank", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Rule", "[", 
+        RowBox[{"#1", ",", "#2"}], "]"}], "&"}], "@@@", "charactersData"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"===", "===", "==="}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"define", " ", "deffRules"}], "===", "===", "==="}], "="}]}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"deffRules", " ", "format", " ", "char"}], "->", "deff"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"deffRules", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Rule", "[", 
+        RowBox[{"#2", ",", "#6"}], "]"}], "&"}], "@@@", "charactersData"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"===", "===", "==="}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"define", " ", "phonRules"}], "===", "===", "==="}], "="}]}], "*)"}]\
+, "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"phonRules", " ", "format", " ", "char"}], "->", "deff"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"phonRules", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Rule", "[", 
+        RowBox[{"#2", ",", "#5"}], "]"}], "&"}], "@@@", "charactersData"}]}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"===", "===", "==="}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Define", " ", "chars"}], "===", "===", "==="}], "="}]}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "list", " ", "or", " ", "chars", " ", "in", " ", "ranked", " ", "order"}],
+     "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"chars", "=", 
+     RowBox[{
+      RowBox[{"#2", "&"}], "@@@", "charactersData"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"===", "===", "==="}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Define", " ", "edeges"}], "===", "===", "==="}], "="}]}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "edeges", " ", "is", " ", "all", " ", "2", " ", "char", " ", "words", 
+      " ", "in", " ", "format", " ", "ch1"}], "\[Rule]", 
+     RowBox[{
+     "ch2", " ", "in", " ", "order", " ", "of", " ", "rank", " ", "from", " ",
+       "most", " ", "frequent", " ", "to", " ", "least"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"justTwoCharWords", " ", "fomrat", " ", "is", " ", 
+     RowBox[{"{", 
+      RowBox[{"rank", ",", " ", 
+       RowBox[{"str", " ", "wrod"}]}], "}"}]}], "*)"}], "\[IndentingNewLine]",
+    "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"turns", " ", "list", " ", 
+     RowBox[{"{", 
+      RowBox[{"a_i", " ", "..."}], " ", "}"}], " ", "into", " ", "list", " ", 
+     
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"i", ",", " ", "a_i"}], "}"}], " ", "..."}], "}"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"index", "[", "list_", "]"}], ":=", 
+    RowBox[{"MapIndexed", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"First", "@", "#2"}], ",", "#1"}], "}"}], "&"}], ",", 
+      "list"}], "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"justTwoCharWords", "=", 
+     RowBox[{"Flatten", "/@", 
+      RowBox[{"index", "@", 
+       RowBox[{
+        RowBox[{"Reap", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"StringLength", "[", "#2", "]"}], "\[Equal]", "2"}], 
+             ",", 
+             RowBox[{"Sow", "[", "#2", "]"}]}], "]"}], "&"}], "@@@", 
+          "wordsData"}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}]}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"edeges", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Rule", "@@", 
+        RowBox[{"Characters", "[", "#2", "]"}]}], "&"}], "@@@", 
+      "justTwoCharWords"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Clear", "[", "justTwoCharWords", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.811162652893261*^9, 3.8111628648176003`*^9}, {
+   3.811162898243224*^9, 3.811162921893145*^9}, {3.811162962993042*^9, 
+   3.8111629712995*^9}, {3.811163071277545*^9, 3.811163234516444*^9}, 
+   3.8111633168807573`*^9, {3.811163415774732*^9, 3.8111634163641977`*^9}, {
+   3.811163448468539*^9, 3.811163467906045*^9}, {3.8111639049365396`*^9, 
+   3.8111639618396177`*^9}, {3.8111639921958313`*^9, 
+   3.8111642387200327`*^9}, {3.811164305910722*^9, 
+   3.811164307194837*^9}},ExpressionUUID->"04f78fa2-cc1d-4a0c-a2b5-\
+cb0888d990ea"]
+},
+WindowSize->{1128, 865},
+WindowMargins->{{76, Automatic}, {22, Automatic}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5801, 164, 703, "Input",ExpressionUUID->"04f78fa2-cc1d-4a0c-a2b5-cb0888d990ea"]
+}
+]
+*)
+

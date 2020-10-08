@@ -10,17 +10,41 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       777,         34]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       917,         37]
-CellTagsIndexPosition[       874,         34]
+NotebookDataLength[      1858,         59]
+NotebookOptionsPosition[      1553,         45]
+NotebookOutlinePosition[      1907,         61]
+CellTagsIndexPosition[      1864,         58]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+   "gives", " ", "subgraph", " ", "generated", " ", "by", " ", "char", " ", 
+    "only", " ", "containing", " ", "nodes", " ", "of", " ", "equal", " ", 
+    "or", " ", "lesser", " ", "rank", " ", "to", " ", "char"}], "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"graph", "[", "char_", "]"}], ":=", 
+   RowBox[{"NeighborhoodGraph", "[", 
+    RowBox[{
+     RowBox[{"Subgraph", "[", 
+      RowBox[{"edges", ",", 
+       RowBox[{"chars", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"1", ";;", "char"}], "/.", "charTOrank"}], "]"}], "]"}]}], 
+      "]"}], ",", "char"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.811164934783667*^9, 3.811164986123461*^9}, {
+  3.811165018872167*^9, 3.8111650192160387`*^9}, {3.811165132222887*^9, 
+  3.811165139429687*^9}, {3.811165201352989*^9, 
+  3.8111652715423517`*^9}},ExpressionUUID->"b4d78a82-a570-42cb-a9a7-\
+344db8e17a3d"]
 },
 WindowSize->{808, 851},
-WindowMargins->{{Automatic, 270}, {-42, Automatic}},
+WindowMargins->{{Automatic, 44}, {Automatic, 49}},
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
 2018)",
 StyleDefinitions->"Default.nb"
@@ -36,9 +60,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 991, 23, 94, "Input",ExpressionUUID->"b4d78a82-a570-42cb-a9a7-344db8e17a3d"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

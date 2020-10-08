@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8309,        232]
-NotebookOptionsPosition[      8002,        218]
-NotebookOutlinePosition[      8355,        234]
-CellTagsIndexPosition[      8312,        231]
+NotebookDataLength[      8589,        245]
+NotebookOptionsPosition[      8187,        230]
+NotebookOutlinePosition[      8542,        246]
+CellTagsIndexPosition[      8499,        243]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,13 +36,13 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"wordsSTRING", "=", 
     RowBox[{"Import", "[", "filePathToWords", "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
    "CharacterData", " ", "format", " ", "is", " ", "\[IndentingNewLine]", 
     RowBox[{"{", 
      RowBox[{"Rank", ",", " ", "Char", ",", " ", "freq", ",", " ", 
-      RowBox[{"integreaed", " ", "fraction"}], ",", " ", 
+      RowBox[{"cumulitave", " ", "fraction"}], ",", " ", 
       RowBox[{"str", " ", "pronuncation"}], ",", " ", 
       RowBox[{"str", " ", "deffinition"}]}], "}"}], "\[IndentingNewLine]", 
     RowBox[{"ex", ":", 
@@ -52,7 +52,7 @@ Cell[BoxData[{
        ",", "\"\<shi2\>\"", ",", "\"\<real/true/honest/really/solid\>\""}], 
       "}"}]}]}], "\[IndentingNewLine]", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"characterData", "=", 
+  RowBox[{"charactersData", "=", 
    RowBox[{"(", 
     RowBox[{
      RowBox[{
@@ -73,14 +73,14 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{"#1", "&"}], "@@@", 
        RowBox[{"Tally", "[", 
-        RowBox[{"Length", "/@", "characterData"}], "]"}]}], "]"}]}], ",", 
+        RowBox[{"Length", "/@", "charactersData"}], "]"}]}], "]"}]}], ",", 
     RowBox[{
      RowBox[{"Beep", "[", "]"}], ";", 
      RowBox[{
      "Print", "[", "\"\<(!) missing parts of char list entries\>\"", 
       "]"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"characterData", "=", 
+  RowBox[{"charactersData", "=", 
    RowBox[{
     RowBox[{
      RowBox[{"Which", "[", 
@@ -136,13 +136,14 @@ Cell[BoxData[{
          RowBox[{"ToExpression", "@", 
           RowBox[{"#", "[", 
            RowBox[{"[", "4", "]"}], "]"}]}], ",", "\"\<\>\"", ",", 
-         "\"\<\>\""}], "}"}]}], "]"}], "&"}], "/@", "characterData"}]}], 
+         "\"\<\>\""}], "}"}]}], "]"}], "&"}], "/@", "charactersData"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Clear", "[", "charsSTRING", "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
-   RowBox[{"wrodData", " ", "format", " ", "is", "\[IndentingNewLine]", 
-    RowBox[{"{", " ", 
+   RowBox[{"wordsData", " ", "format", " ", "is", "\[IndentingNewLine]", 
+    RowBox[{"{", 
      RowBox[{"Rank", ",", " ", "Word", ",", " ", 
       RowBox[{"num", " ", "freq"}]}], "}"}], "\[IndentingNewLine]", "Word", 
     " ", "may", " ", "have", " ", "any", " ", "number", " ", "of", " ", 
@@ -202,22 +203,33 @@ Cell[BoxData[{
           RowBox[{"#", "[", 
            RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], "&"}], "/@",
      "wordsData"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"Clear", "[", "wordsSTRING", "]"}], "\[IndentingNewLine]"}], "Input",\
-
- CellChangeTimes->{{3.8096259735026617`*^9, 3.809626015886894*^9}, {
-  3.809626084642559*^9, 3.809626148142933*^9}, {3.8096261877517567`*^9, 
-  3.809626236147771*^9}, {3.809649919655249*^9, 3.80964994352197*^9}, {
-  3.809650144679441*^9, 3.809650181173605*^9}, {3.8096502233537817`*^9, 
-  3.809650226022015*^9}, {3.809650262077018*^9, 3.809650559491078*^9}, {
-  3.8096505955588303`*^9, 3.809650732206291*^9}, {3.809650773196875*^9, 
-  3.8096511942337437`*^9}, {3.809651227838284*^9, 3.809651354100313*^9}, {
-  3.8096515210116453`*^9, 3.809651570820776*^9}, {3.809651620656513*^9, 
-  3.809651648198645*^9}, {3.809651854182643*^9, 3.8096520712411213`*^9}},
+ RowBox[{"Clear", "[", "wordsSTRING", "]"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzEsowwEAx/F/M8SBFXNYbViKNCRtUsbYhDKEHcyyPCbvR2nNDuMwioNX
+U7OE1nAxYUyJLOEgNJm1g4uLR2aGZYXG//c/fPvcvsnNfTUqGkEQHDJ4xdz0
+lTV7i/qbfj+hZ8rwC59m9fRy0tYYTRSc2NfHwstgYKmO9NvmN8OfQ+YB5E2u
+OGBmzcsprN8RnUGf+vgcPtvf3qD/fiBAOT8WLsOvYjUaurSlhTDvRiuGJ3xx
+LWxTJrXDC7G8F6bR5gahtCFCAwWe0xko2Xtch1+uIx9f5S0ya/L8sGCx4wc6
+u05C8DIuP15AqvgrpjzIlnGgNfKaCztt4lTIajBQdjvpGdAoHO2Bs+xtNeTm
+fAxBiXRYB6v7LSMwzLg8DYnSXUrFdIsJMizjZqjbyArBmA0hpWTrlp1LmpLw
+nQg3S4I8aLQSGTDEUAlhpd0tgmr3WiM02dKV0OF7aIMyC6sDVsnvFuBr6zvl
+P3DH6kQ=
+  "],
  CellLabel->
-  "In[218]:=",ExpressionUUID->"666de3e5-aa7d-4dd2-a451-6032d3b93e63"]
+  "In[625]:=",ExpressionUUID->"666de3e5-aa7d-4dd2-a451-6032d3b93e63"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+  "===", "===", "===", "===", "===", "===", "===", "===", "===", "===", "===",
+    "===", "===", "===", "===", "===", "===", "===", "===", "\[Equal]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.811163334977118*^9, 
+  3.8111633419700727`*^9}},ExpressionUUID->"e7c1a14f-b604-48e1-b166-\
+52948cb05ee5"]
 },
-WindowSize->{1433, 815},
-WindowMargins->{{Automatic, 1}, {Automatic, 0}},
+WindowSize->{1433, 767},
+WindowMargins->{{110, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
 2018)",
 StyleDefinitions->"Default.nb"
@@ -233,7 +245,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 7440, 196, 579, "Input",ExpressionUUID->"666de3e5-aa7d-4dd2-a451-6032d3b93e63"]
+Cell[558, 20, 7280, 198, 537, "Input",ExpressionUUID->"666de3e5-aa7d-4dd2-a451-6032d3b93e63"],
+Cell[7841, 220, 342, 8, 30, "Input",ExpressionUUID->"e7c1a14f-b604-48e1-b166-52948cb05ee5"]
 }
 ]
 *)

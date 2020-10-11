@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7117,        213]
-NotebookOptionsPosition[      6768,        198]
-NotebookOutlinePosition[      7122,        214]
-CellTagsIndexPosition[      7079,        211]
+NotebookDataLength[      7109,        213]
+NotebookOptionsPosition[      6760,        198]
+NotebookOutlinePosition[      7114,        214]
+CellTagsIndexPosition[      7071,        211]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -90,7 +90,6 @@ Cell[BoxData[
        RowBox[{"Rule", "[", 
         RowBox[{"#2", ",", "#5"}], "]"}], "&"}], "@@@", "charactersData"}]}], 
     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"===", "===", "==="}], "=", 
@@ -161,8 +160,9 @@ Cell[BoxData[
     RowBox[{"(*", 
      RowBox[{"uses", " ", "only", " ", "first", " ", "7622", " ", "words"}], 
      "*)"}]}]}]}]], "Input",
- CellLabel->
-  "In[418]:=",ExpressionUUID->"3667ef1f-6473-4ef5-913f-e2c3c53020d7"],
+ CellChangeTimes->{
+  3.811190642576091*^9},ExpressionUUID->"3667ef1f-6473-4ef5-913f-\
+e2c3c53020d7"],
 
 Cell[BoxData[
  RowBox[{
@@ -194,10 +194,10 @@ Cell[BoxData[
    3.811165606536448*^9}, 3.811165657810005*^9, {3.8111658967941017`*^9, 
    3.811165898369418*^9}},
  CellLabel->
-  "In[424]:=",ExpressionUUID->"00000000-0000-0000-0000-000000000000"]
+  "In[468]:=",ExpressionUUID->"00000000-0000-0000-0000-000000000000"]
 },
 WindowSize->{808, 851},
-WindowMargins->{{Automatic, 44}, {Automatic, 49}},
+WindowMargins->{{Automatic, 103}, {Automatic, 0}},
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
 2018)",
 StyleDefinitions->"Default.nb"
@@ -213,8 +213,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 4916, 144, 703, "Input",ExpressionUUID->"3667ef1f-6473-4ef5-913f-e2c3c53020d7"],
-Cell[5477, 166, 1287, 30, 115, "Input"]
+Cell[558, 20, 4908, 144, 682, "Input",ExpressionUUID->"3667ef1f-6473-4ef5-913f-e2c3c53020d7"],
+Cell[5469, 166, 1287, 30, 115, "Input"]
 }
 ]
 *)

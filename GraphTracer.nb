@@ -10,109 +10,117 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7242,        182]
-NotebookOptionsPosition[      6709,        164]
-NotebookOutlinePosition[      7065,        180]
-CellTagsIndexPosition[      7022,        177]
+NotebookDataLength[      8736,        207]
+NotebookOptionsPosition[      8200,        189]
+NotebookOutlinePosition[      8556,        205]
+CellTagsIndexPosition[      8513,        202]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
-  RowBox[{"displayGraph", "[", "char_", "]"}], ":=", 
-  RowBox[{"Module", "[", 
+  RowBox[{"(*", 
    RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-     "graph", ",", "virts", ",", "makeButton", ",", "thisCharButton", ",", 
-      "appendCardButton", ",", "appendCard"}], "}"}], ",", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"displays", " ", "graph"}], "-", 
+    RowBox[{"card", " ", "for", " ", 
+     RowBox[{"char", ".", " ", "clicking"}], " ", "on", " ", "buttons", " ", 
+     "adds", " ", "their", " ", "graph"}], "-", 
+    RowBox[{"cards", " ", "to", " ", "the", " ", "lst"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"displayGraph", "[", "char_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
     RowBox[{
-     RowBox[{"appendCard", ":=", 
+     RowBox[{"{", 
       RowBox[{
-       RowBox[{"(", 
-        RowBox[{"lst", "=", 
-         RowBox[{"Append", "[", 
-          RowBox[{"lst", ",", 
-           RowBox[{"displayGraph", "[", "#", "]"}]}], "]"}]}], ")"}], "&"}]}],
-      ";", "\[IndentingNewLine]", 
-     RowBox[{"thisCharButton", ":=", 
-      RowBox[{"Button", "[", 
+      "graph", ",", "virts", ",", "makeButton", ",", "thisCharButton", ",", 
+       "appendCardButton", ",", "appendCard"}], "}"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"appendCard", ":=", 
        RowBox[{
-        RowBox[{"Row", "[", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"Style", "[", 
-            RowBox[{"char", ",", "Blue", ",", "20"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{
-             RowBox[{"char", "/.", "charTOrank"}], ",", "Gray", ",", "10"}], 
-            "]"}]}], "}"}], "]"}], ",", 
-        RowBox[{"Beep", "[", "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"appendCardButton", ":=", 
-      RowBox[{
+        RowBox[{"(", 
+         RowBox[{"lst", "=", 
+          RowBox[{"Append", "[", 
+           RowBox[{"lst", ",", 
+            RowBox[{"displayGraph", "[", "#", "]"}]}], "]"}]}], ")"}], 
+        "&"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"thisCharButton", ":=", 
        RowBox[{"Button", "[", 
         RowBox[{
          RowBox[{"Row", "[", 
           RowBox[{"{", 
            RowBox[{
             RowBox[{"Style", "[", 
-             RowBox[{"#", ",", "Black", ",", "20"}], "]"}], ",", 
+             RowBox[{"char", ",", "Blue", ",", "20"}], "]"}], ",", 
             RowBox[{"Style", "[", 
              RowBox[{
-              RowBox[{"#", "/.", "charTOrank"}], ",", "Gray", ",", "10"}], 
+              RowBox[{"char", "/.", "charTOrank"}], ",", "Gray", ",", "10"}], 
              "]"}]}], "}"}], "]"}], ",", 
-         RowBox[{"appendCard", "[", "#", "]"}]}], "]"}], "&"}]}], ";", 
-     "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"makeButton", ":=", 
-      RowBox[{
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"#", "\[Equal]", "char"}], ",", "thisCharButton", ",", 
-         RowBox[{"appendCardButton", "[", "#", "]"}]}], "]"}], "&"}]}], ";", 
-     "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"graph", "=", 
-      RowBox[{"generateGraph", "[", "char", "]"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"virts", "=", 
-      RowBox[{"VertexList", "[", "graph", "]"}]}], ";", "\[IndentingNewLine]",
-      "\[IndentingNewLine]", 
-     RowBox[{"Panel", "[", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Graph", "[", 
-        RowBox[{"graph", ",", 
-         RowBox[{"VertexLabels", "\[Rule]", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"#", "\[Rule]", 
-              RowBox[{"makeButton", "[", "#", "]"}]}], "&"}], "/@", "virts"}],
-            ")"}]}], ",", 
-         RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
-         RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"Column", "[", 
-        RowBox[{"{", 
+         RowBox[{"Beep", "[", "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"appendCardButton", ":=", 
+       RowBox[{
+        RowBox[{"Button", "[", 
          RowBox[{
           RowBox[{"Row", "[", 
            RowBox[{"{", 
             RowBox[{
              RowBox[{"Style", "[", 
-              RowBox[{"char", ",", "50"}], "]"}], ",", 
+              RowBox[{"#", ",", "Black", ",", "20"}], "]"}], ",", 
              RowBox[{"Style", "[", 
               RowBox[{
-               RowBox[{"char", "/.", "charTOrank"}], ",", "10"}], "]"}]}], 
-            "}"}], "]"}], ",", 
-          RowBox[{"Style", "[", 
-           RowBox[{
-            RowBox[{"char", "/.", "phonRules"}], ",", "20"}], "]"}], ",", 
-          RowBox[{"Style", "[", 
-           RowBox[{
-            RowBox[{"char", "/.", "deffRules"}], ",", "10"}], "]"}]}], "}"}], 
-        "]"}]}], "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", "]"}]}]], "Input",
+               RowBox[{"#", "/.", "charTOrank"}], ",", "Gray", ",", "10"}], 
+              "]"}]}], "}"}], "]"}], ",", 
+          RowBox[{"appendCard", "[", "#", "]"}]}], "]"}], "&"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"makeButton", ":=", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"#", "\[Equal]", "char"}], ",", "thisCharButton", ",", 
+          RowBox[{"appendCardButton", "[", "#", "]"}]}], "]"}], "&"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"graph", "=", 
+       RowBox[{"generateGraph", "[", "char", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"virts", "=", 
+       RowBox[{"VertexList", "[", "graph", "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Graph", "[", 
+         RowBox[{"graph", ",", 
+          RowBox[{"VertexLabels", "\[Rule]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", "\[Rule]", 
+               RowBox[{"makeButton", "[", "#", "]"}]}], "&"}], "/@", 
+             "virts"}], ")"}]}], ",", 
+          RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+          RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Column", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"char", ",", "50"}], "]"}], ",", 
+              RowBox[{"Style", "[", 
+               RowBox[{
+                RowBox[{"char", "/.", "charTOrank"}], ",", "10"}], "]"}]}], 
+             "}"}], "]"}], ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"char", "/.", "phonRules"}], ",", "20"}], "]"}], ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"char", "/.", "deffRules"}], ",", "10"}], "]"}]}], "}"}],
+          "]"}]}], "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
  CellChangeTimes->{{3.811165505752853*^9, 3.811165589563136*^9}, {
    3.811165667378327*^9, 3.8111656998651*^9}, {3.81116590251637*^9, 
    3.811165903744306*^9}, 3.8111660806560802`*^9, {3.8111664479722147`*^9, 
@@ -123,32 +131,44 @@ Cell[BoxData[
    3.811168274467411*^9, 3.8111683527581244`*^9}, {3.811168400426366*^9, 
    3.8111686231519403`*^9}, {3.811168711983858*^9, 3.8111687583803577`*^9}, {
    3.811182963603932*^9, 3.811183139776349*^9}, {3.811183190383259*^9, 
-   3.811183208528857*^9}, {3.81118325004874*^9, 3.8111832704118547`*^9}},
- CellLabel->
-  "In[415]:=",ExpressionUUID->"6c53e261-e322-4c4b-81a9-1fac5bb2bfff"],
+   3.811183208528857*^9}, {3.81118325004874*^9, 3.8111832704118547`*^9}, {
+   3.811183398015232*^9, 3.811183476201028*^9}, {3.811368895753189*^9, 
+   3.811368897660116*^9}},
+ CellLabel->"In[74]:=",ExpressionUUID->"6c53e261-e322-4c4b-81a9-1fac5bb2bfff"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
+  RowBox[{
+   RowBox[{"StartingCharicter", "=", "\"\<\:79d1\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "lst", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"lst", "=", 
    RowBox[{"{", 
-    RowBox[{"displayGraph", "[", "\"\<\:53c2\>\"", "]"}], "}"}]}], 
+    RowBox[{"displayGraph", "[", "StartingCharicter", "]"}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Dynamic", "[", 
   RowBox[{"lst", "//", "Column"}], "]"}]}], "Input",
  CellChangeTimes->{{3.811166903523925*^9, 3.811166909754081*^9}, {
-  3.811167804072153*^9, 3.811167804861114*^9}, {3.8111683719168797`*^9, 
-  3.811168377704638*^9}, {3.811168744485655*^9, 3.8111687473567333`*^9}, {
-  3.811182877057955*^9, 3.8111829118715467`*^9}, {3.811183145012332*^9, 
-  3.811183153517212*^9}, {3.811183216477578*^9, 3.811183235704438*^9}},
- CellLabel->
-  "In[416]:=",ExpressionUUID->"3b1cee7f-596d-4b42-8c37-1f8af762166e"],
+   3.811167804072153*^9, 3.811167804861114*^9}, {3.8111683719168797`*^9, 
+   3.811168377704638*^9}, {3.811168744485655*^9, 3.8111687473567333`*^9}, {
+   3.811182877057955*^9, 3.8111829118715467`*^9}, {3.811183145012332*^9, 
+   3.811183153517212*^9}, {3.811183216477578*^9, 3.811183235704438*^9}, {
+   3.8111835058493233`*^9, 3.811183523236966*^9}, {3.8111837138990993`*^9, 
+   3.811183735615819*^9}, {3.811253031159212*^9, 3.8112530418704576`*^9}, {
+   3.811253176150313*^9, 3.811253176416573*^9}, {3.811253232590386*^9, 
+   3.811253232765169*^9}, 3.8112906249571333`*^9, {3.811347712031642*^9, 
+   3.8113477121947308`*^9}, {3.811348329825334*^9, 3.8113483330051403`*^9}, {
+   3.811348520192148*^9, 3.811348526876726*^9}},
+ CellLabel->"In[75]:=",ExpressionUUID->"3b1cee7f-596d-4b42-8c37-1f8af762166e"],
 
 Cell[BoxData[
  DynamicBox[ToBoxes[
    Column[$CellContext`lst], StandardForm],
-  ImageSizeCache->{518., {422.134033203125, 427.865966796875}}]], "Output",
+  ImageSizeCache->{796., {242.134033203125, 247.865966796875}}]], "Output",
  CellChangeTimes->{{3.811166910088181*^9, 3.8111669403492947`*^9}, {
    3.811166970689725*^9, 3.8111670001989813`*^9}, {3.811167623401222*^9, 
    3.811167661089776*^9}, 3.811167698019697*^9, {3.811167768280471*^9, 
@@ -157,9 +177,14 @@ Cell[BoxData[
    3.81116831985257*^9}, {3.811168353676223*^9, 3.8111684921244907`*^9}, {
    3.811168540033619*^9, 3.8111686253519773`*^9}, {3.8111686961092453`*^9, 
    3.8111687588927927`*^9}, {3.81118287877435*^9, 3.8111829124103127`*^9}, {
-   3.811183210924822*^9, 3.811183271577223*^9}},
- CellLabel->
-  "Out[417]=",ExpressionUUID->"2be6a82a-db06-4035-bb69-995ebb4beaa9"]
+   3.811183210924822*^9, 3.811183271577223*^9}, 3.811183372753734*^9, {
+   3.811183511119616*^9, 3.811183523958256*^9}, {3.8111837271351833`*^9, 
+   3.81118373648536*^9}, 3.811190536000877*^9, 3.811195636041688*^9, 
+   3.811253043283331*^9, 3.81125317793093*^9, 3.811253233734273*^9, 
+   3.811267885236562*^9, 3.81126792357619*^9, 3.8112906271641827`*^9, 
+   3.811347713478345*^9, 3.8113483348065987`*^9, 3.8113485280887938`*^9, 
+   3.811368935798769*^9},
+ CellLabel->"Out[78]=",ExpressionUUID->"dbd7f61f-65ef-4501-8cc6-c229fe79ec68"]
 }, Open  ]]
 },
 WindowSize->{1035, 800},
@@ -179,10 +204,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 4543, 107, 451, "Input",ExpressionUUID->"6c53e261-e322-4c4b-81a9-1fac5bb2bfff"],
+Cell[558, 20, 4986, 116, 388, "Input",ExpressionUUID->"6c53e261-e322-4c4b-81a9-1fac5bb2bfff"],
 Cell[CellGroupData[{
-Cell[5126, 131, 687, 14, 54, "Input",ExpressionUUID->"3b1cee7f-596d-4b42-8c37-1f8af762166e"],
-Cell[5816, 147, 877, 14, 869, "Output",ExpressionUUID->"2be6a82a-db06-4035-bb69-995ebb4beaa9"]
+Cell[5569, 140, 1332, 25, 115, "Input",ExpressionUUID->"3b1cee7f-596d-4b42-8c37-1f8af762166e"],
+Cell[6904, 167, 1280, 19, 509, "Output",ExpressionUUID->"dbd7f61f-65ef-4501-8cc6-c229fe79ec68"]
 }, Open  ]]
 }
 ]
